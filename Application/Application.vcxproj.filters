@@ -9,21 +9,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source\Core">
-      <UniqueIdentifier>{8507a856-06b6-40b0-b2ad-e058a9062bd0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Graphics">
-      <UniqueIdentifier>{13de6d6b-fd0f-4ce1-a971-f0c572d3fef9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Input">
-      <UniqueIdentifier>{83e0958b-d099-4352-ab17-189abd896a5d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Resources">
-      <UniqueIdentifier>{427f1b18-d428-4840-a675-d71c473d80bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Math">
-      <UniqueIdentifier>{5096f680-17a9-44e3-b5db-2f481f6b3362}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resources">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -34,6 +19,24 @@
     <Filter Include="Resources\Textures">
       <UniqueIdentifier>{3189b7fc-7e62-4d81-9856-32a3b517fc8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Engine">
+      <UniqueIdentifier>{c5f7b877-c750-4ad7-9267-8662285e84be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Core">
+      <UniqueIdentifier>{8507a856-06b6-40b0-b2ad-e058a9062bd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Graphics">
+      <UniqueIdentifier>{13de6d6b-fd0f-4ce1-a971-f0c572d3fef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Input">
+      <UniqueIdentifier>{83e0958b-d099-4352-ab17-189abd896a5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Math">
+      <UniqueIdentifier>{5096f680-17a9-44e3-b5db-2f481f6b3362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Resources">
+      <UniqueIdentifier>{427f1b18-d428-4840-a675-d71c473d80bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -43,81 +46,87 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Core\Assert.cpp">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Core\Timer.cpp">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Core\EventManager.cpp">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Input\InputSystem.cpp">
-      <Filter>Source\Input</Filter>
+      <Filter>Source\Engine\Input</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Resources\ResourceManager.cpp">
-      <Filter>Source\Resources</Filter>
+      <Filter>Source\Engine\Resources</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Graphics\Renderer.cpp">
-      <Filter>Source\Graphics</Filter>
+      <Filter>Source\Engine\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Graphics\Texture.cpp">
-      <Filter>Source\Graphics</Filter>
+      <Filter>Source\Engine\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Core\File.cpp">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Graphics\Program.cpp">
-      <Filter>Source\Graphics</Filter>
+      <Filter>Source\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Engine.cpp">
+      <Filter>Source\Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\Assert.h">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\Factory.h">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\Singleton.h">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\System.h">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\Timer.h">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\EventManager.h">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Input\InputSystem.h">
-      <Filter>Source\Input</Filter>
+      <Filter>Source\Engine\Input</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Resources\Resource.h">
-      <Filter>Source\Resources</Filter>
+      <Filter>Source\Engine\Resources</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Resources\ResourceManager.h">
-      <Filter>Source\Resources</Filter>
+      <Filter>Source\Engine\Resources</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Graphics\Renderer.h">
-      <Filter>Source\Graphics</Filter>
+      <Filter>Source\Engine\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Graphics\Texture.h">
-      <Filter>Source\Graphics</Filter>
+      <Filter>Source\Engine\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\File.h">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Math\Math.h">
-      <Filter>Source\Math</Filter>
+      <Filter>Source\Engine\Math</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Graphics\Program.h">
-      <Filter>Source\Graphics</Filter>
+      <Filter>Source\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Engine.h">
+      <Filter>Source\Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -127,5 +136,16 @@
     <None Include="..\Build\Shaders\basic.vert">
       <Filter>Resources\Shaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Build\Textures\llama.jpg">
+      <Filter>Resources\Textures</Filter>
+    </Image>
+    <Image Include="..\Build\Textures\rock.png">
+      <Filter>Resources\Textures</Filter>
+    </Image>
+    <Image Include="..\Build\Textures\wall.png">
+      <Filter>Resources\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>
