@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "Engine/Engine.h" 
+#include "Engine/Graphics/VertexArray.h"
+#include "Engine/Graphics/VertexIndexArray.h"
 
 
 int main(int argc, char** argv) {
@@ -58,11 +60,16 @@ int main(int argc, char** argv) {
 	program.Link();
 	program.Use();
 
-	//create vertex buffers
-	GLuint vbo;
+	////create vertex buffers
+	/*GLuint vbo;
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);*/
+	nc::VertexIndexArray vertexArray;
+	vertexArray.Create("vertex");
+	vertexArray.CreateBuffer(sizeof(vertices), sizeof(vertices) / (sizeof(float) * 5), vertices);
+	vertexArray.SetAttribute(0, 2, 1, 0);
+	vertexArray.SetAttribute(0, 4, 3, 5);
 
 	//set position pipeline (vertex attribute)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), 0);
@@ -77,10 +84,11 @@ int main(int argc, char** argv) {
 	glEnableVertexAttribArray(1);
 
 	//create index buffers
-	GLuint ibo;
+	/*GLuint ibo;
 	glGenBuffers(1, &ibo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);*/
+	vertexArray.CreateIndexBuffer(GL_UNSIGNED_SHORT, sizeof(indices) / sizeof(GLushort), indices);
 
 	//uniform
 	glm::mat4 model = glm::mat4(1.0f);
@@ -144,13 +152,16 @@ int main(int argc, char** argv) {
 
 		engine.GetSystem<nc::Renderer>()->BeginFrame();
 
+		vertexArray.Draw();
+
 		//render triangle
 		//glDrawArrays(GL_TRIANGLES, 0, 3);
-		GLsizei numElements = sizeof(indices) / sizeof(GLushort);
-		glDrawElements(GL_TRIANGLES, numElements, GL_UNSIGNED_SHORT, 0);
+		/*GLsizei numElements = sizeof(indices) / sizeof(GLushort);
+		glDrawElements(GL_TRIANGLES, numElements, GL_UNSIGNED_SHORT, 0);*/
 
 		engine.GetSystem<nc::Renderer>()->EndFrame();
 	}
+	
 	engine.Shutdown();
 
 	return 0;
